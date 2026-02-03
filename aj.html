@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- ================= SEO META TAGS ================= -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajit Kumar | Portfolio</title>
+
+<meta name="description" content="Ajit Kumar | Computer Science Student, Web Developer, PHP & Python Programmer. Portfolio showcasing ERP, hospital management and web projects.">
+<meta name="keywords" content="Ajit Kumar, Web Developer, PHP Developer, Python Developer, Portfolio, ERP Projects">
+<meta name="author" content="Ajit Kumar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Ajit Kumar | Portfolio">
+<meta property="og:description" content="Computer Science Student | Web Developer | Tech Enthusiast">
+<meta property="og:image" content="ajit_pic.jpg">
+<meta property="og:url" content="https://ajitkumar.dev">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+        linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-attachment:fixed;
+    color:#fff;
+    transition:.3s;
+}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;width:100%;
+    background:rgba(15,23,42,.9);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+.header-inner{
+    max-width:1100px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+header h1{color:#38bdf8}
+nav a{margin-left:18px;font-weight:500}
+nav a:hover{color:#38bdf8}
+.toggle{
+    margin-left:20px;
+    cursor:pointer;
+    background:#38bdf8;
+    color:#020617;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+.hero img{
+    width:160px;height:160px;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    object-fit:cover;
+}
+.hero h2{font-size:2.8rem;margin:20px 0}
+.hero p{color:#cbd5f5}
+.btn{
+    display:inline-block;
+    margin:25px 10px 0;
+    padding:14px 32px;
+    border-radius:30px;
+    font-weight:600;
+}
+.btn.primary{background:#38bdf8;color:#020617}
+.btn.secondary{border:2px solid #38bdf8}
+
+/* SECTIONS */
+section{
+    max-width:1100px;
+    margin:100px auto;
+    padding:0 20px;
+}
+section h2{
+    text-align:center;
+    font-size:2.2rem;
+    color:#38bdf8;
+    margin-bottom:30px;
+}
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(14px);
+    border-radius:18px;
+    padding:30px;
+}
+
+/* SKILLS */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+.skills span{
+    padding:10px 20px;
+    border:1px solid #38bdf8;
+    border-radius:25px;
+}
+
+/* PROJECTS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+.project img{
+    width:100%;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+.project h3{color:#38bdf8}
+
+/* CONTACT & SOCIAL */
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:rgba(255,255,255,0.08);
+    padding:15px 20px;
+    border-radius:12px;
+}
+.contact-item i{
+    font-size:26px;
+    color:#ffdd57;
+}
+.contact-item h4{color:#ffdd57}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    padding:15px 18px;
+    border-radius:50%;
+    font-size:22px;
+}
+
+/* ANIMATION */
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s;
+}
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* TYPING CURSOR */
+#typing::after{
+    content:"|";
+    animation:blink 1s infinite;
+}
+@keyframes blink{50%{opacity:0}}
+
+/* LIGHT MODE */
+.light-mode{
+    background:#f4f6f8;
+    color:#020617;
+}
+.light-mode header{background:#fff}
+.light-mode .card{background:#fff;color:#020617}
+.light-mode footer{background:#e5e7eb;color:#020617}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header-inner">
+<h1>Ajit Kumar</h1>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+<span class="toggle" onclick="toggleMode()">🌙</span>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<img src="ajit_pic.jpg">
+<h2><span id="typing"></span></h2>
+<p>Tech Enthusiast | Web Developer</p>
+<a href="resume.pdf" download class="btn primary">Download Resume</a>
+<a href="#contact" class="btn secondary">Hire Me</a>
+</div>
+</div>
+
+<section id="about" class="reveal">
+<h2>About Me</h2>
+<div class="card">
+I am Ajit Kumar, a Computer Science student passionate about building ERP systems,
+hospital management platforms and web applications.
+</div>
+</section>
+
+<section id="skills" class="reveal">
+<h2>Skills</h2>
+<div class="card skills">
+<span>C</span><span>C++</span><span>PHP</span><span>Python</span>
+<span>HTML</span><span>CSS</span><span>JavaScript</span>
+<span>Web Development</span>
+</div>
+</section>
+
+<section id="projects" class="reveal">
+<h2>Projects</h2>
+<div class="projects">
+
+<div class="card project">
+<img src="https://via.placeholder.com/400x220?text=College+ERP">
+<h3>College ERP</h3>
+<p>Academic management system.</p>
+<a href="#" class="btn primary">Live Demo</a>
+<a href="#" class="btn secondary">Source Code</a>
+</div>
+
+<div class="card project">
+<img src="https://via.placeholder.com/400x220?text=Hospital+Management">
+<h3>Hospital Management</h3>
+<p>Patient and staff management.</p>
+<a href="#" class="btn primary">Live Demo</a>
+<a href="#" class="btn secondary">Source Code</a>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<h2>Contact & Social</h2>
+<div class="card contact-info">
+
+<div class="contact-item">
+<i class="fa-solid fa-phone"></i>
+<div><h4>Mobile</h4><a href="tel:+919334649467">+91 93346 49467</a></div>
+</div>
+
+<div class="contact-item">
+<i class="fa-solid fa-envelope"></i>
+<div><h4>Email</h4><a href="mailto:ajitkumar09112005@gmail.com">ajitkumar09112005@gmail.com</a></div>
+</div>
+
+<div class="contact-item">
+<i class="fa-brands fa-github"></i>
+<div><h4>GitHub</h4><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></div>
+</div>
+
+<div class="contact-item">
+<i class="fa-brands fa-linkedin"></i>
+<div><h4>LinkedIn</h4><a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></div>
+</div>
+
+</div>
+</section>
+
+<footer>© 2026 Ajit Kumar</footer>
+
+<a href="https://wa.me/919334649467" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+/* Scroll Reveal */
+window.addEventListener("scroll",()=>{
+document.querySelectorAll(".reveal").forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight - 100){
+el.classList.add("active");
+}
+});
+});
+
+/* Dark Light */
+function toggleMode(){
+document.body.classList.toggle("light-mode");
+}
+
+/* Typing Animation */
+const texts=["Computer Science Student","Web Developer","Tech Enthusiast"];
+let i=0,j=0;
+(function type(){
+document.getElementById("typing").textContent=texts[i].slice(0,++j);
+if(j===texts[i].length){setTimeout(()=>{j=0;i=(i+1)%texts.length},1500)}
+setTimeout(type,120);
+})();
+</script>
+
+</body>
+</html>
