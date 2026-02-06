@@ -640,35 +640,30 @@
                 </div>
 <div class="glass-card reveal">
     <h3 style="margin-bottom: 20px;">Send a Quick Message</h3>
+<form action="https://formsubmit.co/ajitkumar09112005@gmail.com"
+      method="POST"
+      style="display:flex; flex-direction:column; gap:15px;">
 
-    <form id="contactForm"
-          action="https://formsubmit.co/ajitkumar09112005@gmail.com"
-          method="POST"
-          target="hidden_iframe"
-          onsubmit="handleSubmit(event)"
-          style="display:flex; flex-direction:column; gap:15px;">
+    <!-- FormSubmit Settings -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Portfolio Message">
+    <input type="hidden" name="_next" value="thankyou.html">
 
-        <!-- FormSubmit Config -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Portfolio Message">
+    <!-- Inputs -->
+    <input type="text" name="name" placeholder="Your Name" required
+           style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;">
 
-        <!-- User Inputs -->
-        <input type="text" name="name" placeholder="Your Name" required
-               style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;">
+    <input type="email" name="email" placeholder="Your Email" required
+           style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;">
 
-        <input type="email" name="email" placeholder="Your Email" required
-               style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;">
+    <textarea name="message" rows="4" placeholder="Your Message" required
+              style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;"></textarea>
 
-        <textarea name="message" rows="4" placeholder="Your Message" required
-                  style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;"></textarea>
+    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+        Send Message
+    </button>
+</form>
 
-        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
-            Send Message
-        </button>
-    </form>
-
-    <!-- Hidden iframe (background submission) -->
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
 </div>
 
     </section>
@@ -794,26 +789,12 @@
         };
 
       
-function handleSubmit(e) {
-    // form iframe ke through submit hota rahega
-
-    setTimeout(() => {
-        alert("  Sent your message. Thank you..!!");
-
-        // Smooth scroll to Home section
-        document.getElementById("home").scrollIntoView({
-            behavior: "smooth"
-        });
-
-        // Clear form
-        document.getElementById("contactForm").reset();
-    }, 800);
-}
 
 
     </script>
 </body>
 </html>
+
 
 
 
