@@ -640,29 +640,24 @@
                 </div>
 <div class="glass-card reveal">
     <h3 style="margin-bottom: 20px;">Send a Quick Message</h3>
-<form action="https://formsubmit.co/webdev9608@gmail.com"
+    <form action="https://formsubmit.co/webdev9608@gmail.com"
       method="POST"
       style="display:flex; flex-direction:column; gap:15px;">
 
-    <!-- FormSubmit Settings -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_subject" value="New Portfolio Message">
+    <input type="hidden" name="_template" value="table">
+
+    <!-- Redirect (root safe) -->
     <input type="hidden" name="_next" value="thankyou.html">
 
-    <!-- Inputs -->
-    <input type="text" name="name" placeholder="Your Name" required
-           style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
 
-    <input type="email" name="email" placeholder="Your Email" required
-           style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;">
-
-    <textarea name="message" rows="4" placeholder="Your Message" required
-              style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;"></textarea>
-
-    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
-        Send Message
-    </button>
+    <button type="submit">Send Message</button>
 </form>
+
 
 </div>
 
@@ -794,6 +789,7 @@
     </script>
 </body>
 </html>
+
 
 
 
