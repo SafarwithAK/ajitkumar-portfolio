@@ -638,18 +638,39 @@
                         <a href="https://github.com/SafarwithAK">SafarwithAK</a>
                     </div>
                 </div>
+<div class="glass-card reveal">
+    <h3 style="margin-bottom: 20px;">Send a Quick Message</h3>
 
-                <div class="glass-card reveal">
-                    <h3 style="margin-bottom: 20px;">Send a Quick Message</h3>
-                    <form onsubmit="event.preventDefault(); alert('Inquiry sent! Thank you Ajit will reach out to you.');" style="display: flex; flex-direction: column; gap: 15px;">
-                        <input type="text" placeholder="Your Name" style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;" required>
-                        <input type="email" placeholder="Your Email" style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;" required>
-                        <textarea rows="4" placeholder="Your Message" style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;" required></textarea>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <form id="contactForm"
+          action="https://formsubmit.co/ajitkumar09112005@gmail.com"
+          method="POST"
+          target="hidden_iframe"
+          onsubmit="handleSubmit(event)"
+          style="display:flex; flex-direction:column; gap:15px;">
+
+        <!-- FormSubmit Config -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Portfolio Message">
+
+        <!-- User Inputs -->
+        <input type="text" name="name" placeholder="Your Name" required
+               style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;">
+
+        <input type="email" name="email" placeholder="Your Email" required
+               style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;">
+
+        <textarea name="message" rows="4" placeholder="Your Message" required
+                  style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 8px; color: white;"></textarea>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+            Send Message
+        </button>
+    </form>
+
+    <!-- Hidden iframe (background submission) -->
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+</div>
+
     </section>
 
     <footer>
@@ -771,8 +792,28 @@
             // Trigger first reveal
             window.dispatchEvent(new Event('scroll'));
         };
+
+      
+function handleSubmit(e) {
+    // form iframe ke through submit hota rahega
+
+    setTimeout(() => {
+        alert("  Sent your message. Thank you..!!");
+
+        // Smooth scroll to Home section
+        document.getElementById("home").scrollIntoView({
+            behavior: "smooth"
+        });
+
+        // Clear form
+        document.getElementById("contactForm").reset();
+    }, 800);
+}
+
+
     </script>
 </body>
 </html>
+
 
 
